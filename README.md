@@ -39,4 +39,4 @@ func main() {
 
 ![GitHub Stats](https://github-readme-streak-stats.herokuapp.com/?user=wlcmtunknwndth&theme=default&hide_border=true) ![GitHub Stats](https://github-readme-stats.vercel.app/api/top-langs/?username=wlcmtunknwndth&theme=default&show_icons=true&hide_border=true&layout=compact)
 
-![Leetcode Stats](https://leetcard.jacoblin.cool/wlcmtunknwndth)
+![LeetCode Stats](https://leetcard.jacoblin.cool/wlcmtunknwndth?theme=light&font=Asul&ext=activity)
