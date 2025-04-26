@@ -31,7 +31,7 @@ func NewBIO() *User {
 func main() {
 	_, err := fmt.Fprintf(os.Stdout, "%+v", NewBIO())
 	if err != nil {
-		return
+		panic(err.Error())
 	}
 	return
 }
