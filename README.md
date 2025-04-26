@@ -1,39 +1,41 @@
-```Golang
-package main
+```Rust
+use std::fmt;
 
-import (
-	"fmt"
-	"os"
-)
-
-type User struct {
-	Name                 string `json:"name"`
-	Username             string `json:"username"`
-	Bio                  string `json:"Bio"`
-	Affiliation          string `json:"affiliation"`
-	WorksAt              string `json:"works_at"`
-	ProgrammingLanguages string `json:"programming_languages"`
-	InterestedIn         string `json:"interested_in"`
+#[derive(Debug)]
+struct User {
+    name: String,
+    username: String,
+    bio: String,
+    affiliation: String,
+    works_at: String,
+    programming_languages: String,
+    interested_in: String,
 }
 
-func NewBIO() *User {
-	return &User{
-		Name:                 "Artyem",
-		Username:             "wlcmtunknwndth",
-		Bio:                  "Currently learning rust for highload purposes",
-		Affiliation:          "People's Friendship University of Russia, Computer Science, bachelor",
-		WorksAt:              "VK AI",
-		ProgrammingLanguages: "go, rust, python",
-		InterestedIn:         "backend, ml, ds",
-	}
+impl User {
+    fn new() -> Self {
+        User {
+            name: "Artyem".to_string(),
+            username: "wlcmtunknwndth".to_string(),
+            bio: "Currently learning rust for highload purposes".to_string(),
+            affiliation: "People's Friendship University of Russia, Computer Science, bachelor".to_string(),
+            works_at: "VK AI".to_string(),
+            programming_languages: "go, rust, python".to_string(),
+            interested_in: "backend, ml, ds".to_string(),
+        }
+    }
 }
 
-func main() {
-	_, err := fmt.Fprintf(os.Stdout, "%+v", NewBIO())
-	if err != nil {
-		panic(err.Error())
-	}
-	return
+impl fmt::Display for User {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "User {{ name: {}, username: {}, bio: {}, affiliation: {}, works_at: {}, programming_languages: {}, interested_in: {} }}",
+            self.name, self.username, self.bio, self.affiliation, self.works_at, self.programming_languages, self.interested_in)
+    }
+}
+
+fn main() {
+    let user = User::new();
+    println!("{}", user);
 }
 ```
 
