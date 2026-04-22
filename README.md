@@ -6,7 +6,6 @@ struct User {
     name: String,
     username: String,
     bio: String,
-    affiliation: String,
     works_at: String,
     programming_languages: String,
     interested_in: String,
@@ -18,7 +17,6 @@ impl User {
             name: "Artyem".to_string(),
             username: "wlcmtunknwndth".to_string(),
             bio: "Currently learning rust for highload purposes".to_string(),
-            affiliation: "People's Friendship University of Russia, Computer Science, bachelor".to_string(),
             works_at: "VK AI".to_string(),
             programming_languages: "go, rust, python".to_string(),
             interested_in: "backend, ml, ds".to_string(),
@@ -28,8 +26,8 @@ impl User {
 
 impl fmt::Display for User {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "User {{ name: {}, username: {}, bio: {}, affiliation: {}, works_at: {}, programming_languages: {}, interested_in: {} }}",
-            self.name, self.username, self.bio, self.affiliation, self.works_at, self.programming_languages, self.interested_in)
+        write!(f, "User {{ name: {}, username: {}, bio: {}, works_at: {}, programming_languages: {}, interested_in: {} }}",
+            self.name, self.username, self.bio, self.works_at, self.programming_languages, self.interested_in)
     }
 }
 
